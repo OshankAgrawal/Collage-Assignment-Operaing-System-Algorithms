@@ -1,0 +1,29 @@
+# include <stdio.h>
+int main()
+{
+    int TAT[5],WT[5],process[5]={2,6,4,9,12},arrival[5]={0,1,2,3,6};
+    WT[0]=0;
+    for(int i=1;i<5;i++){
+        WT[i]=WT[i-1]+process[i-1]-arrival[i]+arrival[i-1];
+    }
+    int sumWT=0;
+    float avgWT=0;
+    for(int i=0;i<5;i++){
+        sumWT=sumWT+WT[i];
+        printf("Waiting time of process[%d] is %d ms\n",i,WT[i]);
+    }
+    avgWT=sumWT/5.0;
+    printf("Average Waiting Time is %.2f ms\n",avgWT);
+    TAT[0]=process[0];
+    for(int i=1;i<5;i++)
+        TAT[i]=TAT[i-1]+process[i]-arrival[i]+arrival[i-1];
+    int sumTAT=0;
+    float avgTAT=0;
+    for(int i=0;i<5;i++){
+        sumTAT=sumTAT+TAT[i];
+        printf("Turn around time of process[%d] is %d ms\n",i,TAT[i]);
+    }
+    avgTAT=sumTAT/5.0;
+    printf("Average turn around Time is %.2f ms\n",avgTAT);
+    return 0;
+}
