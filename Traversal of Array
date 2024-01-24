@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main(){
+    int num;
+    printf("Enter the number of element of array :");
+    scanf("%d",&num);
+    int array[num];
+    //This block of code is responsible for create an array 
+    for(int i=0;i<num;i++){
+        printf("Enter the value of %d element: ",i+1);
+        scanf("%d",&array[i]);
+    }
+    //This block of code is responsible for display the created array
+    for(int i=0;i<num;i++){
+        printf("The value of %d element in array is %d\n",i+1,array[i]);
+    }
+    return 0;
+}
