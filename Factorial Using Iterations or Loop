@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main (){
+    int num,fact=1;
+    printf("Enter a number: ");
+    scanf("%d",&num);
+    // Now our program calculate the factorial of given number using iterations or Loop
+    for(int i=1;i<=num;i++)
+        fact=fact*i;
+    printf("Factorial of entered number is %d\n",fact);
+    return 0;
+}
